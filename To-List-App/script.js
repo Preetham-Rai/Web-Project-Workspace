@@ -1,6 +1,6 @@
 const inputBox = document.getElementById("inputFld");
-const listContainer = document.getElementById("list-container");
 const button = document.querySelector(".button");
+const listContainer = document.getElementById("list-container");
 
 // function addTask() {
 //   if (inputBox.value === "") {
