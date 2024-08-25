@@ -37,9 +37,9 @@ const questions = [
   },
 ];
 
-const questionElement = document.getElementById("question");
-const answerButton = document.getElementById("answer-buttons");
-const nextButton = document.getElementById("next-btn");
+const questionElement = document.getElementById("question"); //Its a question of the quiz
+const answerButtons = document.getElementById("answer-buttons"); //Its the answer options
+const nextButton = document.getElementById("next-btn"); //next button to change the question after answered
 
 let currentQuestionIndex = 0;
 let score = 0;
@@ -63,7 +63,7 @@ function showQuestion() {
     const button = document.createElement("button");
     button.innerHTML = answer.text;
     button.classList.add("btn");
-    answerButton.appendChild(button);
+    answerButtons.appendChild(button);
     if (answer.correct) {
       button.dataset.correct = answer.correct;
     }
@@ -72,8 +72,8 @@ function showQuestion() {
 }
 function resetState() {
   nextButton.style.display = "none";
-  while (answerButton.firstChild) {
-    answerButton.removeChild(answerButton.firstChild);
+  while (answerButtons.firstChild) {
+    answerButtons.removeChild(answerButtons.firstChild);
   }
 }
 
@@ -86,7 +86,7 @@ function selectAnswer(e) {
   } else {
     selectBtn.classList.add("incorrect");
   }
-  Array.from(answerButton.children).forEach((button) => {
+  Array.from(answerButtons.children).forEach((button) => {
     if (button.dataset.correct === "true") {
       button.classList.add("correct");
     }
